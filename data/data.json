@@ -1,0 +1,158 @@
+{
+   "Nimi": {
+      "FIELD2": "Vuosi",
+      "FIELD3": "Genre",
+      "FIELD4": "Arvosana",
+      "FIELD5": "Saatavilla"
+   },
+   "Blue Jay": {
+      "FIELD2": "2016",
+      "FIELD3": "Arvostelumenestykset,Draama,Romanttiset elokuvat",
+      "FIELD4": "3.4",
+      "FIELD5": "06.12.2016"
+   },
+   "Let's Be Evil": {
+      "FIELD2": "2016",
+      "FIELD3": "Kansainväliset,Scifi ja fantasia,Trillerit",
+      "FIELD4": "2.6",
+      "FIELD5": "13.12.2016"
+   },
+   "Luna Petunia": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "2.9",
+      "FIELD5": "09.12.2016"
+   },
+   "Spectral": {
+      "FIELD2": "2016",
+      "FIELD3": "Armeija- ja sotaelokuvat,Scifi ja fantasia,Toiminta ja seikkailu",
+      "FIELD4": "4.2",
+      "FIELD5": "09.12.2016"
+   },
+   "Palkkasoturi": {
+      "FIELD2": "2016",
+      "FIELD3": "Draama,Kansainväliset",
+      "FIELD4": "3.3",
+      "FIELD5": "04.12.2016"
+   },
+   "Bob's Broken Sleigh": {
+      "FIELD2": "2015",
+      "FIELD3": "Koko perheen elokuvat",
+      "FIELD4": "3.3",
+      "FIELD5": "06.12.2016"
+   },
+   "Reggie Watts: Spatial": {
+      "FIELD2": "2016",
+      "FIELD3": "Komedia,Stand-up ja talk showt",
+      "FIELD4": "3.1",
+      "FIELD5": "06.12.2016"
+   },
+   "Club de Cuervos": {
+      "FIELD2": "2015",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "4.3",
+      "FIELD5": "09.12.2016"
+   },
+   "Fuller House": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "4.3",
+      "FIELD5": "09.12.2016"
+   },
+   "Dirk Gentlyn holistinen etsivätoimisto": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "4.3",
+      "FIELD5": "11.12.2016"
+   },
+   "Projekti Ihmemaa": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "4",
+      "FIELD5": "09.12.2016"
+   },
+   "Masaan": {
+      "FIELD2": "2015",
+      "FIELD3": "Draama,Kansainväliset",
+      "FIELD4": "2.9",
+      "FIELD5": "13.12.2016"
+   },
+   "Lost & Found Music Studios": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "4",
+      "FIELD5": "03.12.2016"
+   },
+   "Nobel": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "2.9",
+      "FIELD5": "13.12.2016"
+   },
+   "Panttivangit": {
+      "FIELD2": "2016",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "3.6",
+      "FIELD5": "09.12.2016"
+   },
+   "Tokion oikeudenkäynti": {
+      "FIELD2": "2017",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "3.1",
+      "FIELD5": "13.12.2016"
+   },
+   "Rezeta": {
+      "FIELD2": "2012",
+      "FIELD3": "Draama,Kansainväliset,Romanttiset elokuvat",
+      "FIELD4": "2.3",
+      "FIELD5": "03.12.2016"
+   },
+   "Komediasyndrooma": {
+      "FIELD2": "2016",
+      "FIELD3": "Dokumenttielokuvat",
+      "FIELD4": "2.8",
+      "FIELD5": "11.12.2016"
+   },
+   "Other People": {
+      "FIELD2": "2016",
+      "FIELD3": "Arvostelumenestykset,Draama,Komedia",
+      "FIELD4": "3.6",
+      "FIELD5": "08.12.2016"
+   },
+   "Hot Tub Time Machine 2": {
+      "FIELD2": "2015",
+      "FIELD3": "Komedia",
+      "FIELD4": "3.1",
+      "FIELD5": "03.12.2016"
+   },
+   "Luokkakokous 2: Hautajaiset": {
+      "FIELD2": "2014",
+      "FIELD3": "Kansainväliset,Komedia",
+      "FIELD4": "3.5",
+      "FIELD5": "05.12.2016"
+   },
+   "Mariah Carey's Merriest Christmas": {
+      "FIELD2": "2015",
+      "FIELD3": "Koko perheen elokuvat",
+      "FIELD4": "3.2",
+      "FIELD5": "09.12.2016"
+   },
+   "Sendero": {
+      "FIELD2": "2015",
+      "FIELD3": "Kansainväliset,Kauhuelokuvat",
+      "FIELD4": "2",
+      "FIELD5": "12.12.2016"
+   },
+   "Man Seeking Woman": {
+      "FIELD2": "2015",
+      "FIELD3": "TV-sarjat",
+      "FIELD4": "3",
+      "FIELD5": "09.12.2016"
+   },
+   "Father of Four: The return of uncle Sofus": {
+      "FIELD2": "2014",
+      "FIELD3": "Koko perheen elokuvat",
+      "FIELD4": "3.6",
+      "FIELD5": "05.12.2016"
+   }
+}
