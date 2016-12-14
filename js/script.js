@@ -51,10 +51,10 @@ var app = {
       console.log(pickedMovie)
       $.each(data, function (key, value) {
         if(pickedMovie === key){
-          console.log(value.FIELD3);
-          console.log(value.FIELD4);
-          console.log(value.FIELD5);
-          $(value.FIELD3).appendTo(resultContainer);
+          console.log(value.year);
+          console.log(value.categories);
+          console.log(value.grade);
+          $(value.grade).appendTo(resultContainer);
         }
       });
       // data.map(function(movie){
