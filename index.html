@@ -107,6 +107,44 @@
 			</select>
 
 			
+
+    
+
+     
+        
+          <select class="selectpicker" multiple data-actions-box="true">
+            <optgroup label="Genret">
+              <option>option1</option>
+              <option>option2</option>
+              <option>option3</option>
+              <option>option4</option>
+            </optgroup>
+            
+          </select>
+      
+
+        
+
+<script>
+  $(document).ready(function () {
+    var mySelect = $('#first-disabled2');
+
+    $('#special').on('click', function () {
+      mySelect.find('option:selected').prop('disabled', true);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#special2').on('click', function () {
+      mySelect.find('option:disabled').prop('disabled', false);
+      mySelect.selectpicker('refresh');
+    });
+
+    $('#basic2').selectpicker({
+      liveSearch: true,
+      maxOptions: 1
+    });
+  });
+</script>
 			</div>
 			
           </div>
