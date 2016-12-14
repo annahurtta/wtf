@@ -28,7 +28,8 @@ var app = {
     });
   
     $("#titles").autocomplete({
-      source: app.availableTags
+      source: app.availableTags,
+      minLength: 5
     });
 
     $('.search_btn').click(function (){
