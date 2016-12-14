@@ -13,7 +13,7 @@ var app = {
   // },
   getData: function(){
     $.ajax({
-      url: 'data/data_full.json',
+      url: 'data/plain_data.json',
       dataType: 'json',
       success: function (data) {
         console.log(data)
