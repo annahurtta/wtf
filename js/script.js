@@ -55,7 +55,7 @@ var app = {
           console.log(value.year);
           console.log(value.categories);
           console.log(value.grade);
-          $('<div>' + value.grade + '</div><div>' + value.year + '</div><div>' + value.categories + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>' + value.date + '</div>').appendTo(resultContainer);
+          $('<div>' + value.grade + '</div><div>' + value.year + '</div><div>' + value.categories + '</div><div>' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
         }
       });
       // data.map(function(movie){
