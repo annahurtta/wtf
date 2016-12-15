@@ -33,7 +33,7 @@ var app = {
     });
 
     $('.search_btn').click(function (){
-      console.log('clicked')
+      console.log('moi')
         if($('.titles').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin nimi</p>');
         }else{
