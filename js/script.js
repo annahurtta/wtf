@@ -33,7 +33,7 @@ var app = {
     });
 
     $('.search_btn').click(function (){
-      console.log('moi')
+      console.log('click')
         if($('.titles').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin nimi</p>');
         }else{
@@ -55,7 +55,7 @@ var app = {
           console.log(value.year);
           console.log(value.categories);
           console.log(value.grade);
-          $('<div><p>Arvosana</p>' + value.grade + '</div><div>' + value.year + '</div><div>' + value.categories + '</div><div>' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
+          $('<div><p>Arvosana</p>' + value.grade + '</div><div><p>Vuosi</p>' + value.year + '</div><div><p>Genre</p>' + value.categories + '</div><div><p>Saatavilla</p>' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
         }
       });
       // data.map(function(movie){
