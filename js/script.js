@@ -29,7 +29,7 @@ var app = {
   
     $("#titles").autocomplete({
       source: app.availableTags,
-      minLength: 5
+      minLength: 3
     });
 
     $('.search_btn').click(function (){
