@@ -69,6 +69,18 @@ var app = {
           return app.selectedName;         
         }
       });*/
+	  
+	//vuodella
+	$('#search_btn3').click(function (){
+      console.log('hola')
+        if($('.year').val() === ''){
+          $('.result_container').html('<p>Kirjoita ensin vuosi</p>');
+        }else{
+          app.selectedName = $('.year').val();
+          app.printInfo3(data);
+          return app.selectedName;          
+        }
+      });
   },
   
   //haku nimellä
@@ -112,6 +124,25 @@ var app = {
       //   }
       // })
   },
+  
+  //haku vuodella
+	printInfo3: function(data){
+      var resultContainer = $('.result_container').empty();
+      var pickedCategory = app.selectedName;
+      
+      console.log(pickedCategory)
+      $.each(data, function (key, value) {
+        if(pickedCategory === value.year){
+          console.log(value)
+		  console.log(value.grade);
+          console.log(value.year);
+          console.log(value.categories);
+		  console.log(value.date);          
+          $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+        }
+      });
+	},
+	
   init: function() {
     app.getData();
   }
