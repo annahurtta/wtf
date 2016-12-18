@@ -47,7 +47,7 @@ var app = {
 	
 	//kategorialla
 	$('#search_btn2').click(function (){
-      console.log('hei')
+      console.log('hey')
         if($('.categories').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin kategoria</p>');
         }else{
