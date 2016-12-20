@@ -1,16 +1,4 @@
 var app = {
-  // getData: function(){
-  //   $.ajax({
-  //     url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=200&callback=?&q=' + encodeURIComponent('http://www.allflicks.fi/rss/rss.xml'),
-  //     dataType: 'json',
-  //     success: function (data) {
-  //       if (data.responseData.feed && data.responseData.feed.entries) {
-  //         data = data.responseData.feed.entries;
-  //       }
-  //     app.searchData(data);
-  //     }
-  //   });
-  // },
   getData: function(){
     $.ajax({
       url: 'data/plain_data.json',
@@ -34,20 +22,17 @@ var app = {
 
     //nimellä
     $('#search_btn').click(function (){
-      console.log('moi')
         if($('.titles').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin nimi</p>');
         }else{
           app.selectedName = $('.titles').val();
           app.printInfo(data);
           return app.selectedName;
-          
         }
       });
 	  
 	//vuodella
 	$('#search_btn3').click(function (){
-      console.log('hola')
         if($('.year').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin vuosi</p>');
         }else{
@@ -59,7 +44,6 @@ var app = {
 	
 	//kategorialla
 	$('#search_btn2').click(function (){
-      console.log('hey')
         if($('.categories').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin kategoria</p>');
         }else{
@@ -87,15 +71,8 @@ var app = {
   printInfo: function(data){
       var resultContainer = $('.result_container').empty();
       var pickedMovie = app.selectedName;
-      
-      console.log(pickedMovie)
       $.each(data, function (key, value) {
         if(pickedMovie === key){
-          console.log(value)
-		  console.log(value.grade);
-          console.log(value.year);
-          console.log(value.categories);
-		  console.log(value.date);          
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
         }
       });
@@ -105,15 +82,8 @@ var app = {
 	printInfo3: function(data){
       var resultContainer = $('.result_container').empty();
       var pickedCategory = app.selectedName;
-      
-      console.log(pickedCategory)
       $.each(data, function (key, value) {
         if(pickedCategory === value.year){
-          console.log(value)
-		  console.log(value.grade);
-          console.log(value.year);
-          console.log(value.categories);
-		  console.log(value.date);          
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
         }
       });
@@ -126,21 +96,12 @@ var app = {
       
       console.log(pickedCategory) //selectpickeristä stringi ei täsmää datan kategorioihin
       $.each(data, function (key, value) {
-        if(pickedCategory === value.categories){
-          console.log(value)
-		  console.log(value.grade);
-          console.log(value.year);
-          console.log(value.categories);
-		  console.log(value.date);          
-          $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
-        }
+        $.each(value.categories, function(i, el){
+          if(pickedCategory === el){
+            $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+          }
+        });  
       });
-      // data.map(function(movie){
-      //   if(myName === movie.title){
-      //     console.log(movie)
-      //     $(movie.content).appendTo(resultContainer)
-      //   }
-      // })
   },
 	
   init: function() {
