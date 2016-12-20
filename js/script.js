@@ -69,7 +69,7 @@ var app = {
         }
       });
 	  
-	  /*
+	  
 	  //kategorialla (selectpicker ei toimi)
 	  $('#search_btn2').click(function (){
       console.log('hei')
@@ -80,7 +80,7 @@ var app = {
           app.printInfo2(data);
           return app.selectedName;         
         }
-      });*/
+      });
   },
   
   //haku nimellä
