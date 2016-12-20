@@ -37,7 +37,7 @@
           <h2>Haku nimellä</h2>
           <div id="custom-search-input">
             <div class="input-group col-md-12">
-                <input id="titles" type="text" class="search-query form-control titles" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
+                <input id="titles" type="text" class="search-query form-control titles" placeholder="Kirjoita nimi" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
                 <span class="input-group-btn">
                     <button class="btn btn-danger search_btn" id="search_btn" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
@@ -63,9 +63,8 @@
 					document.write('<option value="'+i+'">'+i+'</option>');
 				}
 				</script>
-			</select>
-			
-        <span class="input-group-btn">
+			</select>			
+				<span class="input-group-btn">
                     <button class="btn btn-danger search_btn" id="search_btn3" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
                     </button>
@@ -80,34 +79,30 @@
         <div class="col-md-12">
           <h2>Haku kategorialla</h2>      
           <div id="custom-search-input">
-            <div class="input-group col-md-12">
-      
-                         
-      
-      <select class="selectpicker" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
-        <optgroup label="Genret">
-        <option>TV-sarjat</option>
-        <option>Armeija- ja sotaelokuvat</option>
-        <option>Arvostelumenestykset</option>
-        <option>Dokumenttielokuvat</option>
-        <option>Draama</option>
-        <option>Elokuvaklassikot</option>
-        <option>Erityisaiheet</option>
-        <option>Indie-elokuvat</option>
-        <option>Kansainväliset</option>
-        <option>Kauhuelokuvat</option>
-        <option>Koko perheen elokuvat</option>
-        <option>Komedia</option>
-        <option>Rikoselokuvat</option>
-        <option>Romanttiset elokuvat</option>
-        <option>Scifi ja fantasia</option>
-        <option>Stand-up ja talk showt</option>
-        <option>Suomalaiset</option>
-        <option>Toiminta ja seikkailu</option>
-        <option>Trillerit</option>
-        </optgroup>           
-      </select>
-      
+            <div class="input-group col-md-12">                          
+			  <select class="selectpicker" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
+				<optgroup label="Genret">
+					<option>TV-sarjat</option>
+					<option>Armeija- ja sotaelokuvat</option>
+					<option>Arvostelumenestykset</option>
+					<option>Dokumenttielokuvat</option>
+					<option>Draama</option>
+					<option>Elokuvaklassikot</option>
+					<option>Erityisaiheet</option>
+					<option>Indie-elokuvat</option>
+					<option>Kansainväliset</option>
+					<option>Kauhuelokuvat</option>
+					<option>Koko perheen elokuvat</option>
+					<option>Komedia</option>
+					<option>Rikoselokuvat</option>
+					<option>Romanttiset elokuvat</option>
+					<option>Scifi ja fantasia</option>
+					<option>Stand-up ja talk showt</option>
+					<option>Suomalaiset</option>
+					<option>Toiminta ja seikkailu</option>
+					<option>Trillerit</option>
+				</optgroup>           
+			  </select>     
         <span class="input-group-btn">
                     <button class="btn btn-danger search_btn" id="search_btn2" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
