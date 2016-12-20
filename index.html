@@ -55,8 +55,16 @@
           <div id="custom-search-input">
             <div class="input-group col-md-12">
       
-            <input id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()"/>                
-      
+            <!--<input id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()"/>-->                
+			<select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
+				<script>
+					document.write('<option value="" disabled selected>Valitse vuosi</option>');
+				for(var i=1900; i < 2017; i++){
+					document.write('<option value="'+i+'">'+i+'</option>');
+				}
+				</script>
+			</select>
+			
         <span class="input-group-btn">
                     <button class="btn btn-danger search_btn" id="search_btn3" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
