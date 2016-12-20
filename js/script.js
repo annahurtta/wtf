@@ -22,17 +22,19 @@ var app = {
 
     //nimellä
     $('#search_btn').click(function (){
+      console.log('moi')
         if($('.titles').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin nimi</p>');
         }else{
           app.selectedName = $('.titles').val();
           app.printInfo(data);
           return app.selectedName;
+          
         }
       });
-	  
-	//vuodella
-	$('#search_btn3').click(function (){
+    
+  //vuodella
+  $('#search_btn3').click(function (){
         if($('.year').val() === ''){
           $('.result_container').html('<p>Kirjoita ensin vuosi</p>');
         }else{
@@ -41,36 +43,39 @@ var app = {
           return app.selectedName;          
         }
       });
-	
-	//kategorialla
-	$('#search_btn2').click(function (){
-        if($('.categories').val() === ''){
-          $('.result_container').html('<p>Kirjoita ensin kategoria</p>');
-        }else{
-          app.selectedName = $('.categories').val();
-          app.printInfo2(data);
-          return app.selectedName;          
-        }
-      });
-	  
-	  
-	  //kategorialla (selectpicker ei toimi)
-	  $('#search_btn2').click(function (){
-      console.log('hei')
-        if($('.selectpicker').val() === ''){
-          $('.result_container').html('<p>Kirjoita ensin kategoria</p>');
-        }else{
+  
+  
+    
+    //kategorialla (selectpicker ei toimi)
+    $('#search_btn2').click(function (){
+     
           app.selectedName = $('.selectpicker').val();
-          app.printInfo2(data);
-          return app.selectedName;         
-        }
+          //console.log(app.selectedName)
+          app.printCategoryInfo(data);
+          return app.selectedCategory;         
+        
       });
   },
-  
+  printCategoryInfo: function(data){
+    var resultContainer = $('.result_container').empty();
+    $.each(app.selectedName, function(i,el){
+      app.pickedCategory = el;
+      console.log(app.pickedCategory)
+      $.each(data, function (key, value) {
+        $.each(value.categories, function(i, el){
+          if(app.pickedCategory === el){
+            $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+          }
+        });  
+      });
+    })
+    
+  },
   //haku nimellä
   printInfo: function(data){
       var resultContainer = $('.result_container').empty();
       var pickedMovie = app.selectedName;
+      console.log(pickedMovie)
       $.each(data, function (key, value) {
         if(pickedMovie === key){
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
@@ -79,31 +84,16 @@ var app = {
   },
   
   //haku vuodella
-	printInfo3: function(data){
+  printInfo3: function(data){
       var resultContainer = $('.result_container').empty();
       var pickedCategory = app.selectedName;
+      //console.log(pickedCategory)
       $.each(data, function (key, value) {
-        if(pickedCategory === value.year){
+        if(pickedCategory === value.year){     
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
         }
       });
-	},
-  
-  //haku kategorialla (nyt toimii siten että käyttäjä kirjoittaa haettavan kategorian)
-  printInfo2: function(data){
-      var resultContainer = $('.result_container').empty();
-      var pickedCategory = app.selectedName;
-      
-      console.log(pickedCategory) //selectpickeristä stringi ei täsmää datan kategorioihin
-      $.each(data, function (key, value) {
-        $.each(value.categories, function(i, el){
-          if(pickedCategory === el){
-            $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
-          }
-        });  
-      });
   },
-	
   init: function() {
     app.getData();
   }
