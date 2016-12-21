@@ -4,7 +4,6 @@ var app = {
       url: 'data/plain_data.json',
       dataType: 'json',
       success: function (data) {
-        console.log(data)
         app.searchData(data);
       }
     });
@@ -38,7 +37,7 @@ var app = {
     
     //kategorialla (selectpicker ei toimi)
     $('#search_btn2').click(function (){
-      app.selectedCategory = $('.selectpicker').val();
+      app.selectedCategory = $('.selectpicker_category').val();
       app.printCategoryInfo(data);
       return app.selectedCategory;         
     });
