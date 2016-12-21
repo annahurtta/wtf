@@ -49,7 +49,7 @@ var app = {
     console.log(pickedMovie)
     $.each(data, function (key, value) {
       if(pickedMovie === key){
-        $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
+        $('<div class="col-sm-6 col-md-4"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
       }
     });
     if( $('.result_container').is(':empty') ) {
@@ -60,13 +60,20 @@ var app = {
   //Kategorian perusteella tulostus
   printCategoryInfo: function(data){
     var resultContainer = $('.result_container').empty();
+    var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
     $.each(app.selectedCategory, function(i,el){
       app.pickedCategory = el;
       console.log(app.pickedCategory)
       $.each(data, function (key, value) {
         $.each(value.categories, function(i, el){
           if(app.pickedCategory === el){
-            $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+            $('<img src="' + value.img_src + '" alt="Movie pic"/><p>Arvosana: ' + value.grade + '</p><p>Vuosi: ' + value.year + '</p><p>Saatavilla: ' + value.date + '</p></div>').appendTo(results);
+            var categories = $('<p>Genre: </p>').appendTo(results);
+            $.each(value.categories, function(i,el){
+              app.categories = el;
+              console.log(app.categories)
+              $('<span>' + app.categories + '   </span>').appendTo(categories);
+            });
           }
         });  
       });
@@ -75,11 +82,18 @@ var app = {
   //Tulostus vuoden perusteella
    printYearInfo: function(data){
     var resultContainer = $('.result_container').empty();
+    var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
     $.each(app.selectedYear, function(i,el){
       app.year = el;
       $.each(data, function (key, value) {
       if(app.year === value.year){
-          $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+          $('<img src="' + value.img_src + '" alt="Movie pic"/><p>Arvosana: ' + value.grade + '</p><p>Vuosi: ' + value.year + '</p><p>Saatavilla: ' + value.date + '</p></div>').appendTo(results);
+          var categories = $('<p>Genre: </p>').appendTo(results);
+            $.each(value.categories, function(i,el){
+              app.categories = el;
+              console.log(app.categories)
+              $('<span>' + app.categories + '   </span>').appendTo(categories);
+            });
         }else{
           $('<div><p>Vuodella ei löydy tuloksia</p></div>');
         }

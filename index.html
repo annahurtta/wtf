@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>What the Flix</title>
 
     <!-- Bootstrap style-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -27,15 +27,15 @@
     <div class="jumbotron" style="background-color:black;">
       <div class="container">
        <div class="col-sm-6 col-sm-offset-3">
-	   <a href="/"><img src="img/wtf_logo2.png" alt="logo" class="wtf-logo"/></a>
+     <a href="/"><img src="img/wtf_logo2.png" alt="logo" class="wtf-logo"/></a>
         </div>
       </div>
-	      <div class="container">
+        <div class="container">
       <!-- HAKUKENTTÄ -->
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
           <h2>Etsi elokuvan tai sarjan nimellä</h2>
-		  
+      
           <div id="custom-search-input">
             <div class="input-group col-md-12">
                 <input id="titles" type="text" class="search-query form-control titles" placeholder="Kirjoita elokuvan tai sarjan nimi" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
@@ -45,15 +45,15 @@
                     </button>
                 </span>
             </div>
-			
+      
           </div>
-		  <hr>
+      <hr>
         </div>
       </div>
     
     <!-- HAKU VUODELLA -->
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="col-md-12">
           <h2>Haku julkaisuvuodella</h2>      
           <div id="custom-search-input">
             <div class="input-group col-md-12">
@@ -67,15 +67,6 @@
               </script>
                 </optgroup>           
               </select>
-            <!--<input id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()"/>-->                
-             <!-- <select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
-              <script>
-                document.write('<option value="" disabled selected>Valitse vuosi</option>');
-                for(var i=1900; i < 2017; i++){
-                  document.write('<option value="'+i+'">'+i+'</option>');
-                }
-              </script>
-             </select> -->      
               <span class="input-group-btn">
                 <button class="btn btn-danger search_btn" id="search_btn3" type="button">
                     <span class=" glyphicon glyphicon-search"></span>
@@ -88,45 +79,45 @@
     
       <!-- HAKUKENTTÄ -->
       <div class="row">
-	  
+    
         <div class="col-sm-6 col-sm-offset-3">
-		<hr>
+    <hr>
           <h2>Selaa genreittäin</h2>      
           <div id="custom-search-input">
             <div class="input-group col-md-12">                          
-    			  <select title="Valitse genre" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_category" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
-    				<optgroup label="Genret">
-    					<option>TV-sarjat</option>
-    					<option>Armeija- ja sotaelokuvat</option>
-    					<option>Arvostelumenestykset</option>
-    					<option>Dokumenttielokuvat</option>
-    					<option>Draama</option>
-    					<option>Elokuvaklassikot</option>
-    					<option>Erityisaiheet</option>
-    					<option>Indie-elokuvat</option>
-    					<option>Kansainväliset</option>
-    					<option>Kauhuelokuvat</option>
-    					<option>Koko perheen elokuvat</option>
-    					<option>Komedia</option>
-    					<option>Rikoselokuvat</option>
-    					<option>Romanttiset elokuvat</option>
-    					<option>Scifi ja fantasia</option>
-    					<option>Stand-up ja talk showt</option>
-    					<option>Suomalaiset</option>
-    					<option>Toiminta ja seikkailu</option>
-    					<option>Trillerit</option>
-    				</optgroup>           
-    			  </select>     
-            <span class="input-group-btn" syle="width: 100% !important;">
-              <button class="btn btn-danger search_btn" id="search_btn2" type="button">
-                <span class=" glyphicon glyphicon-search"></span>
-              </button>
-            </span>
+        <select title="Valitse genre" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_category" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
+        <optgroup label="Genret">
+          <option>TV-sarjat</option>
+          <option>Armeija- ja sotaelokuvat</option>
+          <option>Arvostelumenestykset</option>
+          <option>Dokumenttielokuvat</option>
+          <option>Draama</option>
+          <option>Elokuvaklassikot</option>
+          <option>Erityisaiheet</option>
+          <option>Indie-elokuvat</option>
+          <option>Kansainväliset</option>
+          <option>Kauhuelokuvat</option>
+          <option>Koko perheen elokuvat</option>
+          <option>Komedia</option>
+          <option>Rikoselokuvat</option>
+          <option>Romanttiset elokuvat</option>
+          <option>Scifi ja fantasia</option>
+          <option>Stand-up ja talk showt</option>
+          <option>Suomalaiset</option>
+          <option>Toiminta ja seikkailu</option>
+          <option>Trillerit</option>
+        </optgroup>           
+        </select>     
+        <span class="input-group-btn" syle="width: 100% !important;">
+                    <button class="btn btn-danger search_btn" id="search_btn2" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
             </div>
           </div>
-		  
+      
         </div>
-		
+    
       </div>
       <!-- TULOKSET -->
       <div class="row" style="background-color:black;">
@@ -134,7 +125,7 @@
       </div>
      
     </div>
-	
+  
     </div>
  <div class="container" style="background-color:black;">
       <footer>
