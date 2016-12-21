@@ -10,6 +10,7 @@ var app = {
     });
   },
   searchData: function(data) {
+    //nimellä
     app.availableTags = [];
     $.each(data, function (key, value) {
       app.availableTags.push(key);
@@ -19,46 +20,48 @@ var app = {
       source: app.availableTags,
       minLength: 3
     });
-
-    //nimellä
     $('#search_btn').click(function (){
-      console.log('moi')
-        if($('.titles').val() === ''){
-          $('.result_container').html('<p>Kirjoita ensin nimi</p>');
-        }else{
-          app.selectedName = $('.titles').val();
-          app.printInfo(data);
-          return app.selectedName;
-          
-        }
-      });
+      if($('.titles').val() === ''){
+        $('.result_container').html('<p>Kirjoita ensin nimi</p>');
+      }else{
+        app.selectedName = $('.titles').val();
+        app.printNameInfo(data);
+        return app.selectedName;
+      }
+    });
     
-  //vuodella
-  $('#search_btn3').click(function (){
-        if($('.year').val() === ''){
-          $('.result_container').html('<p>Kirjoita ensin vuosi</p>');
-        }else{
-          app.selectedName = $('.year').val();
-          app.printInfo3(data);
-          return app.selectedName;          
-        }
-      });
-  
-  
+    //vuodella
+    $('#search_btn3').click(function (){
+      app.selectedYear = $('.selectpicker_year').val();
+      app.printYearInfo(data);
+    });
     
     //kategorialla (selectpicker ei toimi)
     $('#search_btn2').click(function (){
-     
-          app.selectedName = $('.selectpicker').val();
-          //console.log(app.selectedName)
-          app.printCategoryInfo(data);
-          return app.selectedCategory;         
-        
-      });
+      app.selectedCategory = $('.selectpicker').val();
+      app.printCategoryInfo(data);
+      return app.selectedCategory;         
+    });
   },
+  //Nimen perusteella tulostus
+  printNameInfo: function(data){
+    var resultContainer = $('.result_container').empty();
+    var pickedMovie = app.selectedName;
+    console.log(pickedMovie)
+    $.each(data, function (key, value) {
+      if(pickedMovie === key){
+        $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
+      }
+    });
+    if( $('.result_container').is(':empty') ) {
+    //console.log("Ei löydy");
+    $('<div><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
+      }
+  },
+  //Kategorian perusteella tulostus
   printCategoryInfo: function(data){
     var resultContainer = $('.result_container').empty();
-    $.each(app.selectedName, function(i,el){
+    $.each(app.selectedCategory, function(i,el){
       app.pickedCategory = el;
       console.log(app.pickedCategory)
       $.each(data, function (key, value) {
@@ -69,34 +72,20 @@ var app = {
         });  
       });
     })
-    
   },
-  //haku nimellä
-  printInfo: function(data){
-      var resultContainer = $('.result_container').empty();
-      var pickedMovie = app.selectedName;
-      console.log(pickedMovie)
+  //Tulostus vuoden perusteella
+   printYearInfo: function(data){
+    var resultContainer = $('.result_container').empty();
+    $.each(app.selectedYear, function(i,el){
+      app.year = el;
       $.each(data, function (key, value) {
-        if(pickedMovie === key){
-          $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
-        }
-      });
-	  if( $('.result_container').is(':empty') ) {
-		//console.log("Ei löydy");
-		$('<div><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
-	  }
-  },
-  
-  //haku vuodella
-  printInfo3: function(data){
-      var resultContainer = $('.result_container').empty();
-      var pickedCategory = app.selectedName;
-      //console.log(pickedCategory)
-      $.each(data, function (key, value) {
-        if(pickedCategory === value.year){     
+      if(app.year === value.year){
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+        }else{
+          $('<div><p>Vuodella ei löydy tuloksia</p></div>');
         }
       });
+    });
   },
   init: function() {
     app.getData();

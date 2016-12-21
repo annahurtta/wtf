@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>What the Flix</title>
 
     <!-- Bootstrap style-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -48,27 +48,35 @@
         </div>
       </div>
     
-    <!-- HAKUKENTTÄ -->
+    <!-- HAKU VUODELLA -->
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <h2>Hae julkaisuvuodella</h2>      
+        <div class="col-md-12">
+          <h2>Haku julkaisuvuodella</h2>      
           <div id="custom-search-input">
             <div class="input-group col-md-12">
-      
+              <select title="Valitse vuosi" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_year" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
+                <optgroup label="Vuodet" class="years_optgroup">
+                  <script>
+                    for(var i=1934; i < 2017; i++){
+                      document.write('<option value="'+i+'">'+i+'</option>');
+                    }
+                  </script>
+                </optgroup>           
+              </select>
             <!--<input id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()"/>-->                
-			<select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
-				<script>
-					document.write('<option value="" disabled selected>Valitse vuosi</option>');
-				for(var i=1900; i < 2017; i++){
-					document.write('<option value="'+i+'">'+i+'</option>');
-				}
-				</script>
-			</select>			
-				<span class="input-group-btn">
-                    <button class="btn btn-danger search_btn" id="search_btn3" type="button">
-                        <span class=" glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
+             <!-- <select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
+              <script>
+                document.write('<option value="" disabled selected>Valitse vuosi</option>');
+                for(var i=1900; i < 2017; i++){
+                  document.write('<option value="'+i+'">'+i+'</option>');
+                }
+              </script>
+             </select> -->      
+              <span class="input-group-btn">
+                <button class="btn btn-danger search_btn" id="search_btn3" type="button">
+                    <span class=" glyphicon glyphicon-search"></span>
+                </button>
+              </span>
             </div>
           </div>
         </div>
