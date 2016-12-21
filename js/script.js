@@ -50,7 +50,7 @@ var app = {
     console.log(pickedMovie)
     $.each(data, function (key, value) {
       if(pickedMovie === key){
-        $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
+        $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
       }
     });
     if( $('.result_container').is(':empty') ) {
@@ -67,7 +67,7 @@ var app = {
       $.each(data, function (key, value) {
         $.each(value.categories, function(i, el){
           if(app.pickedCategory === el){
-            $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+            $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
           }
         });  
       });
@@ -80,7 +80,7 @@ var app = {
       app.year = el;
       $.each(data, function (key, value) {
       if(app.year === value.year){
-          $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
+          $('<div class="col-sm-6 col-sm-offset-3"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '<img src="' + value.img_src + '" alt="Movie pic"/></div>').appendTo(resultContainer);
         }else{
           $('<div><p>Vuodella ei löydy tuloksia</p></div>');
         }
