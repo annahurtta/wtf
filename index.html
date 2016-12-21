@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>What the Flix</title>
+    <title>Bootstrap 101 Template</title>
 
     <!-- Bootstrap style-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -23,18 +23,19 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div class="jumbotron">
+  <body style="background-color:black;">
+    <div class="jumbotron" style="background-color:black;">
       <div class="container">
-        <a href="/"><img src="img/wtf_logo2.png" alt="logo"/></a>
-        <h2>Mitä Suomen Netflixistä löytyykään?</h2>
+       <div class="col-sm-6 col-sm-offset-3">
+	   <a href="/"><img src="img/wtf_logo2.png" alt="logo" class="wtf-logo"/></a>
+        </div>
       </div>
-    </div>
-    <div class="container">
+	      <div class="container">
       <!-- HAKUKENTTÄ -->
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
           <h2>Etsi elokuvan tai sarjan nimellä</h2>
+		  
           <div id="custom-search-input">
             <div class="input-group col-md-12">
                 <input id="titles" type="text" class="search-query form-control titles" placeholder="Kirjoita elokuvan tai sarjan nimi" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
@@ -44,39 +45,33 @@
                     </button>
                 </span>
             </div>
+			
           </div>
+		  <hr>
         </div>
       </div>
     
-    <!-- HAKU VUODELLA -->
+    <!-- HAKUKENTTÄ -->
       <div class="row">
-        <div class="col-md-12">
-          <h2>Haku julkaisuvuodella</h2>      
+        <div class="col-sm-6 col-sm-offset-3">
+          <h2>Hae julkaisuvuodella</h2>      
           <div id="custom-search-input">
             <div class="input-group col-md-12">
-              <select title="Valitse vuosi" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_year" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
-                <optgroup label="Vuodet" class="years_optgroup">
-                  <script>
-                    for(var i=1934; i < 2017; i++){
-                      document.write('<option value="'+i+'">'+i+'</option>');
-                    }
-                  </script>
-                </optgroup>           
-              </select>
+      
             <!--<input id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()"/>-->                
-             <!-- <select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
-              <script>
-                document.write('<option value="" disabled selected>Valitse vuosi</option>');
-                for(var i=1900; i < 2017; i++){
-                  document.write('<option value="'+i+'">'+i+'</option>');
-                }
-              </script>
-             </select> -->      
-              <span class="input-group-btn">
-                <button class="btn btn-danger search_btn" id="search_btn3" type="button">
-                    <span class=" glyphicon glyphicon-search"></span>
-                </button>
-              </span>
+			<select id="year" type="text" class="search-query form-control year" placeholder="Search" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn3').click()">
+				<script>
+					document.write('<option value="" disabled selected>Valitse vuosi</option>');
+				for(var i=1900; i < 2017; i++){
+					document.write('<option value="'+i+'">'+i+'</option>');
+				}
+				</script>
+			</select>			
+				<span class="input-group-btn">
+                    <button class="btn btn-danger search_btn" id="search_btn3" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
             </div>
           </div>
         </div>
@@ -84,7 +79,9 @@
     
       <!-- HAKUKENTTÄ -->
       <div class="row">
+	  
         <div class="col-sm-6 col-sm-offset-3">
+		<hr>
           <h2>Selaa genreittäin</h2>      
           <div id="custom-search-input">
             <div class="input-group col-md-12">                          
@@ -118,17 +115,23 @@
                 </span>
             </div>
           </div>
+		  
         </div>
+		
       </div>
       <!-- TULOKSET -->
-      <div class="row">
+      <div class="row" style="background-color:black;>
         <div class="col-md-12 result_container"></div>
       </div>
-      <hr>
+     
+    </div>
+	
+    </div>
+ <div class="container" style="background-color:black;">
       <footer>
         <p>&copy; 2016 Hurtta, Leinonen, Koivumäki</p>
       </footer>
-    </div>
+</div> <!-- /container -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
