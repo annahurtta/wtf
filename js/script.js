@@ -81,6 +81,10 @@ var app = {
           $('<div><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
         }
       });
+	  if( $('.result_container').is(':empty') ) {
+		//console.log("Ei löydy");
+		$('<div><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
+	  }
   },
   
   //haku vuodella
