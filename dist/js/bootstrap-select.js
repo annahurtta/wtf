@@ -331,8 +331,8 @@
 
   // part of this is duplicated in i18n/defaults-en_US.js. Make sure to update both.
   Selectpicker.DEFAULTS = {
-    noneSelectedText: 'Nothing selected',
-    noneResultsText: 'No results matched {0}',
+    noneSelectedText: 'Mitään ei ole valittu',
+    noneResultsText: 'Ei hakutuloksia {0}',
     countSelectedText: function (numSelected, numTotal) {
       return (numSelected == 1) ? "{0} valittu" : "{0} valittu";
     },
