@@ -22,6 +22,9 @@ var app = {
 		
 		//haku nimellä
 		$('#search_btn').click(function (){
+			 $('html, body').animate({
+        scrollTop: $('.result_container').offset().top
+    		}, 2000);
 			if($('.titles').val() === ''){
 				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><p>Kirjoita ensin nimi!</p></div>');
 			}else{
@@ -57,7 +60,6 @@ var app = {
 				var categories = $('<p>Genre: </p>').appendTo(results);
 				$.each(value.categories, function(i,el){
 					app.categories = el;
-					console.log(app.categories)
 					$('<span>' + app.categories + '   </span>').appendTo(categories);
 				});
 			}
@@ -79,7 +81,6 @@ var app = {
 					var categories = $('<p>Genre: </p>').appendTo(results);
 						$.each(value.categories, function(i,el){
 							app.categories = el;
-							console.log(app.categories)
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
 				}else{
@@ -103,7 +104,6 @@ var app = {
 						var categories = $('<p>Genre: </p>').appendTo(results);
 						$.each(value.categories, function(i,el){
 							app.categories = el;
-							console.log(app.categories)
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
 					}
