@@ -23,8 +23,8 @@ var app = {
 		//haku nimellä
 		$('#search_btn').click(function (){
 			 $('html, body').animate({
-        scrollTop: $('.result_container').offset().top
-    		}, 200);
+        scrollTop: $('.result_container').offset().top -100
+    		}, 1500);
 			if($('.titles').val() === ''){
 				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><p>Kirjoita ensin nimi!</p></div>');
 			}else{
@@ -37,8 +37,8 @@ var app = {
 		//haku vuodella
 		$('#search_btn3').click(function (){
 			$('html, body').animate({
-        scrollTop: $('.result_container').offset().top
-    		}, 200);
+        scrollTop: $('.result_container').offset().top -100
+    		}, 1500);
 			app.selectedYear = $('.selectpicker_year').val();
 			app.printYearInfo(data);
 		});
@@ -46,8 +46,8 @@ var app = {
 		//haku kategorialla
 		$('#search_btn2').click(function (){
 			$('html, body').animate({
-        scrollTop: $('.result_container').offset().top
-    		}, 200);
+        scrollTop: $('.result_container').offset().top -100
+    		}, 1500);
 			app.selectedCategory = $('.selectpicker_category').val();
 			app.printCategoryInfo(data);
 			return app.selectedCategory;         
