@@ -24,7 +24,7 @@ var app = {
 		$('#search_btn').click(function (){
 			 $('html, body').animate({
         scrollTop: $('.result_container').offset().top
-    		}, 2000);
+    		}, 200);
 			if($('.titles').val() === ''){
 				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><p>Kirjoita ensin nimi!</p></div>');
 			}else{
@@ -36,23 +36,27 @@ var app = {
 		
 		//haku vuodella
 		$('#search_btn3').click(function (){
+			$('html, body').animate({
+        scrollTop: $('.result_container').offset().top
+    		}, 200);
 			app.selectedYear = $('.selectpicker_year').val();
 			app.printYearInfo(data);
 		});
 		
 		//haku kategorialla
 		$('#search_btn2').click(function (){
+			$('html, body').animate({
+        scrollTop: $('.result_container').offset().top
+    		}, 200);
 			app.selectedCategory = $('.selectpicker_category').val();
 			app.printCategoryInfo(data);
 			return app.selectedCategory;         
 		});
 	},
-	
 	//Tulostus nimen perusteella
 	printNameInfo: function(data){
 		var resultContainer = $('.result_container').empty();
 		var pickedMovie = app.selectedName;
-		console.log(pickedMovie)
 		$.each(data, function (key, value) {
 			if(pickedMovie === key){
 				var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
