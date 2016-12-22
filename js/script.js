@@ -23,7 +23,7 @@ var app = {
 		//haku nimellä
 		$('#search_btn').click(function (){
 			if($('.titles').val() === ''){
-				$('.result_container').html('<p>Kirjoita ensin nimi!</p>');
+				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><p>Kirjoita ensin nimi!</p></div>');
 			}else{
 				app.selectedName = $('.titles').val();
 				app.printNameInfo(data);
@@ -63,7 +63,7 @@ var app = {
 			}
 		});
 		if( $('.result_container').is(':empty') ) {
-			$('<div><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
+			var results = $('<div class="col-sm-6 col-md-offset-3"><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
 		}
 	},
 	
