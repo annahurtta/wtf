@@ -45,18 +45,24 @@ var app = {
 		});
 	},
 	
-	//Nimen perusteella tulostus
+	//Tulostus nimen perusteella
 	printNameInfo: function(data){
 		var resultContainer = $('.result_container').empty();
 		var pickedMovie = app.selectedName;
 		console.log(pickedMovie)
 		$.each(data, function (key, value) {
 			if(pickedMovie === key){
-				$('<div class="col-sm-6 col-md-4"><p>Arvosana: ' + value.grade + '</br>Vuosi: ' + value.year + '</br>Genre: ' + value.categories + '</br>Saatavilla: ' + value.date + '</div><img src="' + value.img_src + '" alt="Movie pic"/><div>').appendTo(resultContainer);
+				var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
+				$('<img src="' + value.img_src + '" alt="Movie pic"/><p>Arvosana: ' + value.grade + '</p><p>Vuosi: ' + value.year + '</p><p>Saatavilla: ' + value.date + '</p></div>').appendTo(results);
+				var categories = $('<p>Genre: </p>').appendTo(results);
+				$.each(value.categories, function(i,el){
+					app.categories = el;
+					console.log(app.categories)
+					$('<span>' + app.categories + '   </span>').appendTo(categories);
+				});
 			}
 		});
 		if( $('.result_container').is(':empty') ) {
-			//console.log("Ei löydy");
 			$('<div><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
 		}
 	},
@@ -83,7 +89,7 @@ var app = {
 		});
 	},
 	
-	//Kategorian perusteella tulostus
+	//Tulostus kategorian perusteella
 	printCategoryInfo: function(data){
 		var resultContainer = $('.result_container').empty();
 		var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
