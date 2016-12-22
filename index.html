@@ -1,144 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>What the Flix</title>
-
-    <!-- Bootstrap style-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- APP STYLES -->
-    <link href="styles/css/styles.css" rel="stylesheet">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- jQuery UI CSS -->
-    <link href="styles/libs/jquery-ui.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/bootstrap-select.css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body style="background-color:black;">
-    <div class="jumbotron" style="background-color:black;">
-      <div class="container">
-       <div class="col-sm-6 col-sm-offset-3">
-     <a href="/"><img src="img/wtf_logo2.png" alt="logo" class="wtf-logo"/></a>
-        </div>
-      </div>
-        <div class="container">
-      <!-- HAKUKENTTÄ -->
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <h2>Etsi elokuvan tai sarjan nimellä</h2>
-      
-          <div id="custom-search-input">
-            <div class="input-group col-md-12">
-                <input id="titles" type="text" class="search-query form-control titles" placeholder="Kirjoita elokuvan tai sarjan nimi" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
-                <span class="input-group-btn">
-                    <button class="btn btn-danger search_btn" id="search_btn" type="button" style="width: 100%;">
-                        <span class=" glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-      
-          </div>
-      <hr>
-        </div>
-      </div>
-    
-    <!-- HAKU VUODELLA -->
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-          <h2>Haku julkaisuvuodella</h2>      
-          <div id="custom-search-input">
-            <div class="input-group col-md-12">
-              <select title="Valitse vuosi" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_year" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
-                <optgroup label="Vuodet" class="years_optgroup">
-                  <script>
-            
-                for(var i=1934; i < 2017; i++){
-                  document.write('<option value="'+i+'">'+i+'</option>');
-                }
-              </script>
-                </optgroup>           
-              </select>
-              <span class="input-group-btn">
-                <button class="btn btn-danger search_btn" id="search_btn3" type="button">
-                    <span class=" glyphicon glyphicon-search"></span>
-                </button>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <!-- HAKUKENTTÄ -->
-      <div class="row">
-    
-        <div class="col-sm-6 col-sm-offset-3">
-    <hr>
-          <h2>Selaa genreittäin</h2>      
-          <div id="custom-search-input">
-            <div class="input-group col-md-12">                          
-        <select title="Valitse genre" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_category" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
-        <optgroup label="Genret">
-          <option>TV-sarjat</option>
-          <option>Armeija- ja sotaelokuvat</option>
-          <option>Arvostelumenestykset</option>
-          <option>Dokumenttielokuvat</option>
-          <option>Draama</option>
-          <option>Elokuvaklassikot</option>
-          <option>Erityisaiheet</option>
-          <option>Indie-elokuvat</option>
-          <option>Kansainväliset</option>
-          <option>Kauhuelokuvat</option>
-          <option>Koko perheen elokuvat</option>
-          <option>Komedia</option>
-          <option>Rikoselokuvat</option>
-          <option>Romanttiset elokuvat</option>
-          <option>Scifi ja fantasia</option>
-          <option>Stand-up ja talk showt</option>
-          <option>Suomalaiset</option>
-          <option>Toiminta ja seikkailu</option>
-          <option>Trillerit</option>
-        </optgroup>           
-        </select>     
-        <span class="input-group-btn" syle="width: 100% !important;">
-                    <button class="btn btn-danger search_btn" id="search_btn2" type="button">
-                        <span class=" glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-          </div>
-      
-        </div>
-    
-      </div>
-      <!-- TULOKSET -->
-      <div class="row" style="background-color:black;">
-        <div class="col-md-12 result_container"></div>
-      </div>
-     
-    </div>
-  
-    </div>
- <div class="container" style="background-color:black;">
-      <footer>
-        <p>&copy; 2016 Hurtta, Leinonen, Koivumäki</p>
-      </footer>
-</div> <!-- /container -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="js/libs/jquery-ui.min.js"></script>
-    <script src="dist/js/bootstrap-select.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>What the Flix</title>
+		<!-- Bootstrap style-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- APP STYLES -->
+		<link href="styles/css/styles.css" rel="stylesheet">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- jQuery UI CSS -->
+		<link href="styles/libs/jquery-ui.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="dist/css/bootstrap-select.css">
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body style="background-color:black;">
+		<div class="jumbotron" style="background-color:black;">
+			<div class="container">
+				<div class="col-sm-6 col-sm-offset-3">
+					<a href="/"><img src="img/wtf_logo2.png" alt="logo" class="wtf-logo"/></a>
+				</div>
+			</div>		
+			<div class="container">		
+			<!-- HAKU NIMELLÄ -->
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<h2>Etsi elokuvan tai sarjan nimellä</h2>
+					<div id="custom-search-input">
+						<div class="input-group col-md-12">
+							<input id="titles" type="text" class="search-query form-control titles" placeholder="Kirjoita nimi" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn').click()"/>
+							<span class="input-group-btn">
+								<button class="btn btn-danger search_btn" id="search_btn" type="button" style="width: 100%;">
+									<span class=" glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>     
+					</div>
+					<hr>
+				</div>
+			</div>    
+			<!-- HAKU VUODELLA -->
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
+					<h2>Hae julkaisuvuodella</h2>      
+					<div id="custom-search-input">
+						<div class="input-group col-md-12">
+							<select title="Valitse vuosi" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_year" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
+								<optgroup label="Vuodet" class="years_optgroup">
+									<script>            
+										for(var i=1934; i < 2017; i++){
+										  document.write('<option value="'+i+'">'+i+'</option>');
+										}
+									</script>
+								</optgroup>           
+							</select>
+							<span class="input-group-btn">
+								<button class="btn btn-danger search_btn" id="search_btn3" type="button">
+									<span class=" glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>    
+			<!-- HAKU GENRELLÄ -->
+			<div class="row">   
+				<div class="col-sm-6 col-sm-offset-3">
+					<hr>
+					<h2>Selaa genreittäin</h2>      
+					<div id="custom-search-input">
+						<div class="input-group col-md-12">                          
+							<select title="Valitse genre" data-size="7" data-live-search="true" multiple data-selected-text-format="count" class="selectpicker selectpicker_category" multiple data-actions-box="true" onkeydown = "if (event.keyCode == 13) document.getElementById('search_btn2').click()">
+								<optgroup label="Genret">
+									<option>TV-sarjat</option>
+									<option>Armeija- ja sotaelokuvat</option>
+									<option>Arvostelumenestykset</option>
+									<option>Dokumenttielokuvat</option>
+									<option>Draama</option>
+									<option>Elokuvaklassikot</option>
+									<option>Erityisaiheet</option>
+									<option>Indie-elokuvat</option>
+									<option>Kansainväliset</option>
+									<option>Kauhuelokuvat</option>
+									<option>Koko perheen elokuvat</option>
+									<option>Komedia</option>
+									<option>Rikoselokuvat</option>
+									<option>Romanttiset elokuvat</option>
+									<option>Scifi ja fantasia</option>
+									<option>Stand-up ja talk showt</option>
+									<option>Toiminta ja seikkailu</option>
+									<option>Trillerit</option>
+								</optgroup>           
+							</select>     
+							<span class="input-group-btn" syle="width: 100% !important;">
+								<button class="btn btn-danger search_btn" id="search_btn2" type="button">
+									<span class=" glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>
+					</div>      
+				</div>    
+			</div>
+			<!-- TULOKSET -->
+			<div class="row" style="background-color:black;">
+				<div class="col-md-12 result_container"></div>
+			</div>    
+		</div>  
+		</div>
+		<div class="container" style="background-color:black;">
+			<footer>
+				<p>&copy; 2016 Hurtta, Leinonen, Koivumäki</p>
+			</footer>
+	</div> <!-- /container -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="js/libs/jquery-ui.min.js"></script>
+		<script src="dist/js/bootstrap-select.js"></script>
+		<script src="js/script.js"></script>
+	</body>
 </html>
