@@ -26,7 +26,7 @@ var app = {
 				scrollTop: $('.result_container').offset().top -100
     		}, 1500);
 			if($('.titles').val() === ''){
-				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Kirjoita ensin elokuvan tai sarjan nimi.</h3></div>');
+				$('.result_container').html('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Kirjoita ensin elokuvan tai sarjan nimi.</h3></div></div>');
 			}else{
 				app.selectedName = $('.titles').val();
 				app.printNameInfo(data);
