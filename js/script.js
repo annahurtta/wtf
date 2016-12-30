@@ -69,7 +69,7 @@ var app = {
 			}
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku "' + pickedMovie + '" ei tuottanut tulosta! Yritä uudelleen tai kokeile genre-hakua.</h3></div></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku "' + pickedMovie + '" ei tuottanut tulosta! Yritä uudelleen tai kokeile hakua vuodella tai selausta genrellä.</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
@@ -91,7 +91,7 @@ var app = {
 			});
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku vuodella "' +app.selectedYear+ '" ei tuottanut tulosta! Kokeile toista julkaisuvuotta tai selaa genrejä!</h3></div></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Tuloksia ei löydy!</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
@@ -116,7 +116,7 @@ var app = {
 			});
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">'+ app.selectedCategory + '-genrellä ei löydy tällä hetkellä teoksia. Kokeile toista genreä!</h3></div></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Tuloksia ei löydy!</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
