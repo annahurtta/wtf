@@ -87,11 +87,12 @@ var app = {
 							app.categories = el;
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
-				}else{
-					$('<div><p>Vuodella ei löydy tuloksia</p></div>').appendTo(resultContainer);
 				}
 			});
 		});
+		if( $('.result_container').is(':empty') ) {
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku ei tuottanut tulosta!</h3></div></div>').appendTo(resultContainer);
+		}
 	},
 	
 	//Tulostus kategorian perusteella
@@ -110,12 +111,13 @@ var app = {
 							app.categories = el;
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
-					}else{
-						$('<div><p>Kategorialla ei löydy tuloksia</p></div>').appendTo(resultContainer);
 					}
 				});  
 			});
-		})
+		});
+		if( $('.result_container').is(':empty') ) {
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku ei tuottanut tulosta!</h3></div></div>').appendTo(resultContainer);
+		}
 	},
 	
 	init: function() {
