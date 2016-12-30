@@ -88,7 +88,7 @@ var app = {
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
 				}else{
-					$('<div><p>Vuodella ei löydy tuloksia</p></div>');
+					$('<div><p>Vuodella ei löydy tuloksia</p></div>').appendTo(resultContainer);
 				}
 			});
 		});
@@ -110,6 +110,8 @@ var app = {
 							app.categories = el;
 							$('<span>' + app.categories + '   </span>').appendTo(categories);
 						});
+					}else{
+						$('<div><p>Kategorialla ei löydy tuloksia</p></div>').appendTo(resultContainer);
 					}
 				});  
 			});
