@@ -26,7 +26,7 @@ var app = {
 				scrollTop: $('.result_container').offset().top -100
     		}, 1500);
 			if($('.titles').val() === ''){
-				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><p>Kirjoita ensin nimi!</p></div>');
+				$('.result_container').html('<div class="col-sm-6 col-md-offset-3"><h3><span style="color:#d9534f">Kirjoita ensin nimi!</span></3></div>');
 			}else{
 				app.selectedName = $('.titles').val();
 				app.printNameInfo(data);
