@@ -91,7 +91,7 @@ var app = {
 			});
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku ei tuottanut tulosta!</h3></div></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku vuodella "' +app.selectedYear+ '" ei tuottanut tulosta!</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
