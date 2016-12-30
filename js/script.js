@@ -81,7 +81,7 @@ var app = {
 			app.year = el;
 			$.each(data, function (key, value) {
 				if(app.year === value.year){
-					var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
+					var results = $('<div class="col-sm-6 col-md-offset-3"><h3 style="color:white;">Tuloksia löytyy Netflixistä!</h3></div>').appendTo(resultContainer);
 					$('<img src="' + value.img_src + '" alt="Movie pic"/><p>Arvosana: ' + value.grade + '</p><p>Vuosi: ' + value.year + '</p><p>Saatavilla: ' + value.date + '</p></div>').appendTo(results);
 					var categories = $('<p>Genre: </p>').appendTo(results);
 						$.each(value.categories, function(i,el){
@@ -105,7 +105,7 @@ var app = {
 			$.each(data, function (key, value) {
 				$.each(value.categories, function(i, el){
 					if(app.pickedCategory === el){
-						var results = $('<div class="col-sm-6 col-md-offset-3"></div>').appendTo(resultContainer);
+						var results = $('<div class="col-sm-6 col-md-offset-3"><h3 style="color:white;">Tuloksia löytyy Netflixistä!</h3></div>').appendTo(resultContainer);
 						$('<img src="' + value.img_src + '" alt="Movie pic"/><p>Arvosana: ' + value.grade + '</p><p>Vuosi: ' + value.year + '</p><p>Saatavilla: ' + value.date + '</p></div>').appendTo(results);
 						var categories = $('<p>Genre: </p>').appendTo(results);
 						$.each(value.categories, function(i,el){
