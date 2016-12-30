@@ -69,7 +69,7 @@ var app = {
 			}
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="col-sm-6 col-md-offset-3"><p>Kirjoittamaasi: ' + pickedMovie + ' ei löydy!</p></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku "' + pickedMovie + '" ei tuottanut tulosta! Yritä uudelleen tai kokeile genre-hakua.</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
