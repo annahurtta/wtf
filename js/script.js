@@ -26,7 +26,7 @@ var app = {
 				scrollTop: $('.result_container').offset().top -100
     		}, 1500);
 			if($('.titles').val() === ''){
-				$('.result_container').html('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Kirjoita ensin elokuvan tai sarjan nimi.</h3></div></div>');
+				$('.result_container').html('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Kirjoita ensin elokuvan tai sarjan nimi!</h3></div></div>');
 			}else{
 				app.selectedName = $('.titles').val();
 				app.printNameInfo(data);
@@ -41,6 +41,7 @@ var app = {
     		}, 1500);
 			app.selectedYear = $('.selectpicker_year').val();
 			app.printYearInfo(data);
+			return app.selectedYear;
 		});
 		
 		//haku kategorialla
@@ -69,7 +70,7 @@ var app = {
 			}
 		});
 		if( $('.result_container').is(':empty') ) {
-			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku "' + pickedMovie + '" ei tuottanut tulosta! Yritä uudelleen tai kokeile hakua vuodella tai selausta genrellä.</h3></div></div>').appendTo(resultContainer);
+			var results = $('<div class="row"><div class="col-sm-6 col-md-offset-3"><h3 style="color:#d9534f">Haku "' + pickedMovie + '" ei tuottanut tulosta!</h3></div></div>').appendTo(resultContainer);
 		}
 	},
 	
